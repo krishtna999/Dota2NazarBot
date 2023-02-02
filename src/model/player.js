@@ -1,4 +1,4 @@
-const { ACCOUNT_ID_TO_DISCORD_TAG } = require("../constants/account");
+const { ACCOUNT_IDS, ACCOUNT_ID_TO_DISCORD_TAG } = require("../constants/account");
 
 class Player {
     // Player AccountId
@@ -35,18 +35,11 @@ class Player {
                 }
             }
         });
-
-        console.log("MC" + this.matchCount);
-        console.log("PWC" + this.partyWinCount);
-        console.log("SWC" + this.soloWinCount);
     }
 }
 
 function isToday(matchDate) {
-    const today = new Date();
-    // console.log(matchDate); 
-    // console.log(today); 
-    // console.log("\n\n");    
+    const today = new Date();   
     return matchDate.getDate() == today.getDate() &&
         matchDate.getMonth() == today.getMonth() &&
         matchDate.getFullYear() == today.getFullYear();
